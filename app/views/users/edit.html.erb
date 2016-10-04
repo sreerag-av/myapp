@@ -1,14 +1,18 @@
 
 <div class="edit">
 <h1>Edit</h1>
-<%= flash.now[:notice] if flash.now[:notice]%>
+<%= flash.now[:now] if flash.now[:now]%>
 <%=form_tag users_update_path(id: params[:id]) do %>
 <%=  label_tag 'Username'%>
 <%=  text_field_tag 'name',@user.name %>
 <br/>
 <br/>
-<%=  label_tag 'Password'%>
-<%=  text_field_tag 'password'%>
+<%=  label_tag 'Old Password'%>
+<%=  text_field_tag 'password_old'%>
+<br/>
+<br/>
+<%=  label_tag 'New Password'%>
+<%=  text_field_tag 'password_new'%>
 <br/>
 <br/>
 <%=  label_tag 'Password Confirmation'%>

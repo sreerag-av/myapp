@@ -1,6 +1,10 @@
 <h1>Users#index</h1>
 <p></p>
 <%@user.each do |a|%>
+<%if a.admin == true %>
+<p>Name : <%= a.name%> </p>
+<%else%>
 <p>Name : <%= a.name%> <%= link_to 'Edit' ,users_edit_path(id: a.id) %> </p>
+<%end%>
 <%end%>
 <%= link_to "Logout", login_logout_path , data: { confirm: 'Are you sure?' }%>

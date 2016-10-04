@@ -4,6 +4,9 @@
 }
 </style>
 <h1>Login</h1>
+<%= flash.now[:now] if flash.now[:now]%>
+<br/>
+<br/>
 <%=form_tag login_verify_login_path do %>
 <%= label_tag 'Username'%>
 <%= text_field_tag 'name'%>
