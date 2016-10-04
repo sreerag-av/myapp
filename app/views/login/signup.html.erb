@@ -1,0 +1,23 @@
+<style>
+*{
+	text-align:center;
+}
+</style>
+<h1>Sign Up</h1>
+<%= flash.now[:notice] if flash.now[:notice]%>
+<%=form_tag login_create_path do %>
+<%=  label_tag 'Username'%>
+<%=  text_field_tag 'name'%>
+<br/>
+<br/>
+<%=  label_tag 'Password'%>
+<%=  text_field_tag 'password'%>
+<br/>
+<br/>
+<%=  label_tag 'Password Confirmation'%>
+<%=  text_field_tag 'password_confirmation'%>
+<%=  submit_tag 'Submit'%>
+<%end%>
+<br/>
+<%=link_to "Login", login_login_path%>
+

@@ -1,0 +1,28 @@
+
+<div class="edit">
+<h1>Edit</h1>
+<% if flash[:now]%>
+<p>
+	<%= flash[:now] %>
+</p>
+<%end%>
+<%=form_tag admin_update_path(id: params[:id]) do %>
+<%=  label_tag 'Username'%>
+<%=  text_field_tag 'name',@user.name %>
+<br/>
+<br/>
+<%=  label_tag 'Password'%>
+<%=  text_field_tag 'password'%>
+<br/>
+<br/>
+<%=  label_tag 'Password Confirmation'%>
+<%=  text_field_tag 'password_confirmation'%>
+<br/>
+<br/>
+<%=  label_tag 'Admin'%>
+<%=  select_tag 'admin',"<option value='true'>True</option><option value='false'>False</option>".html_safe %>
+<%=  submit_tag 'Submit'%>
+<%end%>
+<br/>
+<%=link_to "Back", admin_index_path %>
+</div>

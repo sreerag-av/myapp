@@ -1,0 +1,15 @@
+
+<div class="index">
+<h1>Admin Menu</h1>
+<% if flash[:now]%>
+<p>
+	<%= flash[:now] %>
+</p>
+<%end%>
+<p></p>
+<%@user.each do |a|%>
+<p>Name : <%= a.name%> <%= link_to 'Edit' ,admin_edit_path(id: a.id) %> <%= link_to 'Delete' ,admin_destroy_path(id: a.id) %></p>
+<%end%>
+<p><%= link_to 'New user', admin_new_path %></p>
+<%= link_to "Logout", login_logout_path , data: { confirm: 'Are you sure?' }%>
+</div>
