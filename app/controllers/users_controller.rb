@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   end
   
   def update   
-     if @user.try(:authenticate,"#{params[:password]}")  
      @user.update(user_params)
      @user.save
   end
